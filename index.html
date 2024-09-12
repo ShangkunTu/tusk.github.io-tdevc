@@ -46,7 +46,8 @@
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#s2s">Seen-to-Seen</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#s2u">Seen-to-Unseen</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#u2u">Unseen-to-Unseen</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#exp">Others</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sr">SR operation</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ac">Acknowledgements</a></li>
 				</ul>
 			</div>
 		</div>
@@ -79,12 +80,12 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ShangkunTu/TDEVC-demo-code" target="_blank"
+                <a href="https://github.com/ShangkunTu/tdevccode/tree/main" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github fa-inverse"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code will soon</span>
                   </a>
               </span>
             </div>
@@ -101,7 +102,7 @@
                         Abstract
                     </h2>
                     <p>
-                        Voice conversion (VC) is the task of converting a certain aspect of speech from a source to target but without changing the original linguistic content. In this paper, we focus on timbre conversion. Current VC methods often retain source speaker-related information within the extracted content or fail to accurately capture timbre features, resulting in lower speaker similarity in the converted speech. To address these issues, we propose the TDE-VC model, a one-shot Voice Conversion based on Timbre Disentanglement and Extraction, which primarily comprises a content extractor and timbre extractor. The content extractor exploits the adversarial speaker classification and data perturbation to effectively extract content while eliminating the speaker-related information. The timbre extractor includes a multi-scale timbre encoder (MSTE), and is trained with our propose timbre disentanglement strategy to effectively disentangle and extract timbre features. Experimental results show that TDE-VC model enhances the speaker similarity while maintaining competitive intelligibility compared to existing methods.
+                        Voice conversion (VC) is the task of converting a certain aspect of speech from a source to target while preserving the original linguistic content. In this paper, we focus on timbre conversion, which is a mainstream type of VC. Current VC methods often retain source speaker-related information within the extracted content or inadequately capture timbre features, leading to lower speaker similarity in the converted speech. To address these issues, we propose the TDE-VC model, a one-shot Voice Conversion based on Timbre Disentanglement and Extrac- tion, which primarily comprises a content extractor and timbre extractor. The content extractor exploits the adversarial speaker classification and data perturbation to effectively extract content while eliminating the speaker-related information. The timbre extractor includes a multi-scale timbre encoder (MSTE), and is trained with our propose timbre disentanglement strategy to effectively disentangle and extract timbre features. Experimental results show that TDE-VC model enhances the speaker similarity while maintaining competitive intelligibility compared to existing methods.
 						
 					</p>
                     <h2 class="post-title">
@@ -116,7 +117,7 @@
                         One-shot Voice Conversion
                     </h2>
                     <h3 class="post-meta" id="s2s">
-                        Seen-to-Seen
+                        Seen-to-Seen (traditional VC)
                     </h3>
                     <table class="table">
                         <thead>
@@ -265,7 +266,7 @@
                     </table>
 					<hr>
 					<h3 class="post-meta" id="s2u">
-                        Seen-to-Unseen
+                        Seen-to-Unseen (Zero-shot VC)
                     </h3>
                     <table class="table">
                         <thead>
@@ -545,7 +546,7 @@
                     </table>
 					<hr>
 					<h3 class="post-meta" id="u2u">
-                        Unseen-to-Unseen
+                        Unseen-to-Unseen (Zero-shot VC)
                     </h3>
                     <table class="table">
                         <thead>
@@ -893,7 +894,7 @@
                     </table>
                 </div>
                 <div class="post-preview"></div>
-                    <h2 class="post-title">
+                    <h2 class="post-title" id="sr">
                         Shuffle and Regroup (SR) operation
                     </h2>
                     <img src="data/shuffle_group/mste.png" width="500" height="350">
@@ -904,8 +905,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Raw wavform</th>
-                                <th scope="col">Ours adopt 25 frames</th>
-                                <th scope="col">Others</th>
+                                <th scope="col">25 frames (we adopt)</th>
+                                <th scope="col">Others lengths</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -950,6 +951,18 @@
                         After evaluating various segment lengths, a length of 25 frames (0.5 seconds) was determined to provide an optimal balance between content shuffling and timbre preservation. Further experiments confirmed that a segment length of 25 frames achieved the highest speaker similarity. The experimental results are shown below:
 					</p>
                     <img src="data/shuffle_group/srlength.png" width="500" height="200">
+                </div>
+                <div class="post-preview"></div>
+                    <h2 class="post-title" id="ac">
+                        Acknowledgements
+                    </h2>
+                    <p>
+                        The proposed TDE-VC model adopts the VITS architecture [1] for its excellent reconstruction capability and is inspired by FreeVC [2] for its robust VC performance. It also incorporates the vocoder from MS-iSTFT-VITS [3] for faster training and inference. Our proposed timbre disentanglement and extraction strategy is inspired by Disentangling SV [4].<br>
+                        [1] <a href="https://github.com/jaywalnut310/vits" target="_blank">https://github.com/jaywalnut310/vits</a><br>
+                        [2] <a href="https://github.com/OlaWod/FreeVC" target="_blank">https://github.com/OlaWod/FreeVC</a><br>
+                        [3] <a href="https://github.com/MasayaKawamura/MB-iSTFT-VITS" target="_blank">https://github.com/MasayaKawamura/MB-iSTFT-VITS</a><br>
+                        [4] <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/9d276b0a087efdd2404f3295b26c24c1-Paper-Conference.pdf" target="_blank">https://proceedings.neurips.cc/paper_files/paper/2023/Paper-Conference.pdf</a><br>
+                    </p>
                 </div>
                 <hr>
 				
