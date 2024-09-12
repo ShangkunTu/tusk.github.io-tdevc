@@ -118,7 +118,7 @@ img::-moz-selection {
 @media only screen{
     #mainNav {
         border-bottom: 1px solid transparent;
-        background: #336699;
+        background: #609d6e;
     }
     #mainNav .navbar-brand {
         padding: 10px 20px;
@@ -142,7 +142,7 @@ img::-moz-selection {
 header.masthead {
     margin-bottom: 50px;
     background: no-repeat center center;
-    background-color: #336699;
+    background-color: #609d6e;
     background-attachment: scroll;
     position: relative;
     background-size: cover;
